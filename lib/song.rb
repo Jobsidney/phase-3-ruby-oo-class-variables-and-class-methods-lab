@@ -8,7 +8,6 @@ class Song
         @name=name
         @artist=artist
         @genre=genre
-        @@songs<<{name:name,artist:artist,genre:genre}
         @@artists<<artist
         @@genres<<genre
         
@@ -33,10 +32,10 @@ class Song
         @@genres.uniq
     end
     def self.genre_count
-        @@artists.uniq.each{
-            |item|
-
-        }
+        @@genres.tally
+    end
+    def self.artist_count
+        @@artists.tally
     end
     
 end
